@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; overflow-wrap: break-word; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; overflow-wrap: break-word; word-break: auto-phrase; }
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body { font-family: 'Noto Sans JP', sans-serif; background: #FFF5FA; color: #3A1A3A; }
     img { max-width: 100%; display: block; }
@@ -107,11 +107,11 @@
     .step-num { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--purple)); color: white; font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
     .step-icon { font-size: 26px; margin-bottom: 6px; }
     .step-title { font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; line-height: 1.5; }
-    .step-desc { font-size: 12px; color: var(--textl); line-height: 1.7; margin-bottom: 10px; }
-    .step-link { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(135deg, #E1306C, #833AB4); color: white; font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 20px; transition: all .2s; }
+    .step-desc { font-size: 13px; color: var(--textl); line-height: 1.8; margin-bottom: 10px; }
+    .step-link { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(135deg, #E1306C, #833AB4); color: white; font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 20px; transition: all .2s; }
     .step-link.shop { background: linear-gradient(135deg, var(--pink), var(--purple)); }
     .step-link:hover { transform: scale(1.05); }
-    .step-note { font-size: 11px; color: var(--textl); margin-top: 6px; line-height: 1.5; }
+    .step-note { font-size: 12px; color: var(--textl); margin-top: 6px; line-height: 1.6; }
     .step-arrow { font-size: 20px; color: var(--pink); text-align: center; font-weight: 700; }
 
     /* ===== ARTIST ===== */
@@ -143,9 +143,9 @@
     .expand-card { background: white; border-radius: 16px; padding: 20px 18px; box-shadow: 0 4px 20px rgba(155,93,229,.07); border: 2px solid transparent; transition: all .3s; }
     .expand-card:hover { border-color: var(--purple-l); transform: translateY(-3px); }
     .expand-icon { font-size: 30px; margin-bottom: 8px; }
-    .expand-title { font-family: 'Noto Serif JP', serif; font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.5; }
+    .expand-title { font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.5; }
     .expand-title span { color: var(--purple); }
-    .expand-desc { font-size: 12px; color: var(--textl); line-height: 1.8; }
+    .expand-desc { font-size: 13px; color: var(--textl); line-height: 1.8; }
     .expand-badge { display: inline-block; margin-top: 10px; background: var(--yellow); color: var(--dark); font-size: 11px; font-weight: 900; padding: 3px 12px; border-radius: 20px; }
 
     /* ===== FUTURE ===== */
@@ -157,8 +157,8 @@
     .future-card { background: rgba(255,255,255,.07); border: 1.5px solid rgba(255,255,255,.14); border-radius: 16px; padding: 20px 16px; text-align: center; transition: all .3s; }
     .future-card:hover { background: rgba(255,255,255,.13); border-color: var(--pink); }
     .future-icon { font-size: 28px; margin-bottom: 8px; }
-    .future-title { font-size: 13px; font-weight: 700; color: white; margin-bottom: 6px; line-height: 1.5; }
-    .future-desc { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.8; }
+    .future-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 6px; line-height: 1.5; }
+    .future-desc { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.8; }
     .ftag { display: inline-block; margin-top: 10px; background: var(--pink); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
     .ftag.y { background: var(--yellow); color: var(--dark); }
 
@@ -196,11 +196,11 @@
       .pet-ref-sec { padding: 28px 0 40px; }
       .pet-ref-grid { gap: 10px; }
       .expand-sec { padding: 36px 0; }
-      .expand-grid { grid-template-columns: 1fr; gap: 14px; }
-      .expand-card { padding: 20px 18px; }
-      .future-sec { padding: 36px 0; }
+      .expand-grid { grid-template-columns: 1fr; gap: 12px; }
+      .expand-card { padding: 16px 14px; }
+      .future-sec { padding: 32px 0; }
       .future-grid { grid-template-columns: 1fr; gap: 10px; }
-      .future-card { padding: 18px 16px; }
+      .future-card { padding: 16px 14px; }
       .cta-sec { padding: 48px 16px; }
       .gallery-cta { flex-direction: column; gap: 12px; text-align: center; padding: 16px; }
       .sh { margin-bottom: 24px; }
@@ -294,18 +294,18 @@
         <div class="step-num">1</div>
         <div class="step-icon">🎨</div>
         <div class="step-title">アトリエ水藍色さんへ<br>イラストを依頼</div>
-        <div class="step-desc">インスタグラム <strong>@shui_lanse_</strong> にDMでペット・お子様の写真を送るだけ。シンプル線画もフルカラーも対応。完成したイラストデータを受け取ってください。</div>
+        <div class="step-desc">インスタ <strong>@shui_lanse_</strong> にDMで写真を送るだけ。<br>線画・フルカラーどちらも対応しています。</div>
         <a href="https://www.instagram.com/shui_lanse_/" class="step-link" target="_blank">📷 @shui_lanse_</a>
-        <p class="step-note">※イラスト料金は作家さんへ直接お問い合わせください</p>
+        <p class="step-note">※料金は作家さんへ直接お問い合わせください</p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card s2">
         <div class="step-num">2</div>
         <div class="step-icon">⚡</div>
         <div class="step-title">おまんぼさんへ<br>レーザー彫刻を注文</div>
-        <div class="step-desc">受け取ったイラストデータを持って、おまんぼさんのBASEショップのコラボページからご注文ください。革・木・各種素材に対応。コラボ限定カラー（ピンク・ブルー）もあり！</div>
+        <div class="step-desc">イラストデータを持って、コラボページからご注文ください。<br>限定カラー（ピンク・ブルー）もあり！</div>
         <a href="https://omanbosan.base.shop/page/collab" class="step-link shop" target="_blank">🛒 コラボページへ</a>
-        <p class="step-note">※イラストのオーダーはアトリエ水藍色さんへ（おまんぼさんではイラスト受付なし）</p>
+        <p class="step-note">※イラスト依頼はアトリエ水藍色さんへ。<br>おまんぼさんではイラスト受付なし。</p>
       </div>
     </div>
   </div>
@@ -378,13 +378,13 @@
       <div class="expand-card">
         <div class="expand-icon">🌈</div>
         <div class="expand-title">カラーイラストからも<br><span>レーザー彫刻できます！</span></div>
-        <div class="expand-desc">シンプルな線画だけでなく、フルカラーのイラストからもレーザー彫刻作品を作ることができます。カラーのあのイラストが、革や木の作品に。ぜひお気軽にご相談ください。</div>
+        <div class="expand-desc">線画だけでなく、フルカラーのイラストからも彫刻できます。<br>あのイラストを革や木の作品に。<br>お気軽にご相談ください。</div>
         <span class="expand-badge">🎨 カラーも対応！</span>
       </div>
       <div class="expand-card">
         <div class="expand-icon">🛍️</div>
         <div class="expand-title">キーホルダーだけじゃない！<br><span>様々な作品に彫刻可能</span></div>
-        <div class="expand-desc">レザー調キーホルダーをはじめ、ウォレット・ショルダーバッグ・コースター・フォトフレームなど幅広い革・木製品にレーザー彫刻できます。大切な人への特別なプレゼントに。</div>
+        <div class="expand-desc">キーホルダー・ウォレット・バッグ・コースターなど、幅広い革・木製品に彫刻できます。<br>大切な人への特別なプレゼントに。</div>
         <span class="expand-badge">🌟 バリエーション豊富</span>
       </div>
     </div>
@@ -403,19 +403,19 @@
       <div class="future-card">
         <div class="future-icon">🎨</div>
         <div class="future-title">コラボ作品を<br>どんどん増やしていきます</div>
-        <div class="future-desc">アトリエ水藍色さんとのコラボ作品はまだまだ増やしていく予定。新しい作品が出たらインスタでお知らせします！</div>
+        <div class="future-desc">コラボ作品はまだまだ増やしていく予定です。<br>新作はインスタでお知らせします！</div>
         <span class="ftag y">🔥 進行中</span>
       </div>
       <div class="future-card">
         <div class="future-icon">✏️</div>
         <div class="future-title">他の作家さんとの<br>コラボも準備中！</div>
-        <div class="future-desc">アトリエ水藍色さん以外にも、素敵な作家さんとのコラボを計画中。あなたのお気に入り作家さんとのコラボが実現するかも！</div>
+        <div class="future-desc">他の作家さんとのコラボも計画中。<br>あなたのお気に入り作家さんと実現するかも！</div>
         <span class="ftag">🎉 準備中</span>
       </div>
       <div class="future-card">
         <div class="future-icon">📱</div>
         <div class="future-title">最新情報は<br>インスタをフォロー！</div>
-        <div class="future-desc">新しいコラボや作品情報はインスタグラムで随時発信中。フォローしてお見逃しなく！</div>
+        <div class="future-desc">新作・コラボ情報はインスタで随時発信中。<br>フォローしてお見逃しなく！</div>
         <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px;">
           <a href="https://www.instagram.com/omanbosan.lv/" class="ftag y" target="_blank" style="display:inline-block;">📷 @omanbosan.lv</a>
           <a href="https://www.instagram.com/shui_lanse_/" class="ftag" target="_blank" style="display:inline-block;">📷 @shui_lanse_</a>
