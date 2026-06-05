@@ -13,72 +13,6 @@
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body { font-family: 'Noto Sans JP', sans-serif; background: #FFF5FA; color: #3A1A3A; }
 
-    /* ===== ログイン画面 ===== */
-    #login-screen {
-      position: fixed; inset: 0; z-index: 9999;
-      background: linear-gradient(160deg, #2d0a4e 0%, #6b1a7a 50%, #c13584 100%);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 0;
-    }
-    #login-screen .login-box {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 24px;
-      padding: 48px 40px;
-      text-align: center;
-      max-width: 340px;
-      width: 90%;
-      backdrop-filter: blur(12px);
-    }
-    #login-screen .login-logo {
-      font-size: 48px; margin-bottom: 16px;
-    }
-    #login-screen h1 {
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      line-height: 1.6;
-    }
-    #login-screen p {
-      color: rgba(255,255,255,0.7);
-      font-size: 12px;
-      margin-bottom: 28px;
-    }
-    #login-screen input {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: 50px;
-      border: 2px solid rgba(255,255,255,0.4);
-      background: rgba(255,255,255,0.15);
-      color: white;
-      font-size: 16px;
-      text-align: center;
-      letter-spacing: 0.15em;
-      outline: none;
-      margin-bottom: 16px;
-    }
-    #login-screen input::placeholder { color: rgba(255,255,255,0.45); letter-spacing: 0.05em; }
-    #login-screen input:focus { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.22); }
-    #login-screen button {
-      width: 100%;
-      padding: 14px;
-      border-radius: 50px;
-      border: none;
-      background: white;
-      color: #6b1a7a;
-      font-size: 15px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    #login-screen button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    #login-screen .login-error {
-      color: #ffb3d1;
-      font-size: 13px;
-      margin-top: 12px;
-      min-height: 20px;
-    }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
 
@@ -285,18 +219,6 @@
   </style>
 </head>
 <body>
-
-<!-- ログイン画面 -->
-<div id="login-screen">
-  <div class="login-box">
-    <div class="login-logo">🎨</div>
-    <h1>アトリエ水藍色 × おまんぼさん<br>コラボページ</h1>
-    <p>テスト公開中です。パスワードを入力してください。</p>
-    <input type="password" id="login-input" placeholder="パスワード" autocomplete="off" />
-    <button onclick="checkLogin()">入る</button>
-    <div class="login-error" id="login-error"></div>
-  </div>
-</div>
 
 <!-- HEADER -->
 <header class="hd">
@@ -563,32 +485,5 @@
   document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 </script>
 
-<script>
-  // ===== パスワード認証 =====
-  (function() {
-    if (sessionStorage.getItem('collab_auth') === 'ok') {
-      document.getElementById('login-screen').style.display = 'none';
-    }
-  })();
-
-  function checkLogin() {
-    var val = document.getElementById('login-input').value.trim();
-    if (val === 'atorie') {
-      sessionStorage.setItem('collab_auth', 'ok');
-      var screen = document.getElementById('login-screen');
-      screen.style.transition = 'opacity 0.4s';
-      screen.style.opacity = '0';
-      setTimeout(function() { screen.style.display = 'none'; }, 400);
-    } else {
-      document.getElementById('login-error').textContent = 'パスワードが違います';
-      document.getElementById('login-input').value = '';
-      document.getElementById('login-input').focus();
-    }
-  }
-
-  document.getElementById('login-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') checkLogin();
-  });
-</script>
 </body>
 </html>
